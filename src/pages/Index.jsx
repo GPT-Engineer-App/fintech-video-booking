@@ -35,8 +35,8 @@ const Index = () => {
       <main className="flex-grow">
         {/* Video Section */}
         <section className="bg-[#5f2efe] py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-[50%] mx-auto">
+          <div className="container mx-auto px-4 flex justify-center">
+            <div className="w-full max-w-[50%]">
               <div className="aspect-w-16 aspect-h-9">
                 <iframe 
                   src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
