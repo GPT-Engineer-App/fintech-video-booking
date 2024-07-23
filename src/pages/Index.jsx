@@ -31,60 +31,65 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Video Section */}
-      <section className="bg-blue-900 py-16">
-        <div className="container mx-auto">
-          <div className="aspect-w-16 aspect-h-9">
-            <iframe 
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen
-              className="w-full h-full"
-            ></iframe>
+      {/* Main Content */}
+      <main className="flex-grow">
+        {/* Video Section */}
+        <section className="bg-blue-900 py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <div className="aspect-w-16 aspect-h-9">
+                <iframe 
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                  frameBorder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowFullScreen
+                  className="w-full h-full rounded-lg shadow-lg"
+                ></iframe>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Booking Section */}
-      <section className="bg-black text-white py-16">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-4 text-center">Book a Meeting</h2>
-          <p className="text-xl mb-8 text-center">Schedule a meeting with our experts</p>
-          <form className="max-w-md mx-auto space-y-4">
-            <Input type="text" placeholder="Name" className="bg-gray-800 text-white" />
-            <Input type="email" placeholder="Email" className="bg-gray-800 text-white" />
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button
-                  variant={"outline"}
-                  className={cn(
-                    "w-full justify-start text-left font-normal",
-                    !date && "text-muted-foreground"
-                  )}
-                >
-                  <CalendarIcon className="mr-2 h-4 w-4" />
-                  {date ? format(date, "PPP") : <span>Pick a date</span>}
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-auto p-0" align="start">
-                <Calendar
-                  mode="single"
-                  selected={date}
-                  onSelect={setDate}
-                  initialFocus
-                />
-              </PopoverContent>
-            </Popover>
-            <Input type="time" className="bg-gray-800 text-white" />
-            <Button type="submit" className="w-full">Book Meeting</Button>
-          </form>
-        </div>
-      </section>
+        {/* Booking Section */}
+        <section className="bg-black text-white py-16">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-4 text-center">Book a Meeting</h2>
+            <p className="text-xl mb-8 text-center">Schedule a meeting with our experts</p>
+            <form className="max-w-md mx-auto space-y-4">
+              <Input type="text" placeholder="Name" className="bg-gray-800 text-white" />
+              <Input type="email" placeholder="Email" className="bg-gray-800 text-white" />
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant={"outline"}
+                    className={cn(
+                      "w-full justify-start text-left font-normal",
+                      !date && "text-muted-foreground"
+                    )}
+                  >
+                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    {date ? format(date, "PPP") : <span>Pick a date</span>}
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                  <Calendar
+                    mode="single"
+                    selected={date}
+                    onSelect={setDate}
+                    initialFocus
+                  />
+                </PopoverContent>
+              </Popover>
+              <Input type="time" className="bg-gray-800 text-white" />
+              <Button type="submit" className="w-full">Book Meeting</Button>
+            </form>
+          </div>
+        </section>
+      </main>
 
       {/* Footer Section */}
-      <footer className="bg-blue-900 text-white py-8">
-        <div className="container mx-auto text-center">
+      <footer className="bg-blue-900 text-white py-8 mt-auto">
+        <div className="container mx-auto text-center px-4">
           <div className="flex justify-center space-x-4 mb-4">
             {/* Placeholder social media icons */}
             <a href="#" className="text-2xl">📘</a>
